@@ -6,7 +6,7 @@
 <img width="796" alt="image" src="https://github.com/1017yu/Todo-doTalk/assets/83483378/8eba0096-fd2e-4fe3-92d4-6cbe07481bc8">
 
 GET 방식은 요청하는 데이터가 [HTTP Request Message](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages)의 Header 부분에 url 이 담겨서 전송된다. 
-때문에 url 상에 ? 뒤에 데이터가 붙어 request 를 보내게 되는 것이다. 이러한 방식은 url 이라는 공간에 담겨가기 때문에 전송할 수 있는 데이터의 크기가 제한적이다.
+때문에 url 상에 ?(쿼리 문자열이 붙는 절대 경로) 뒤에 데이터가 붙어 request 를 보내게 되는 것이다. 이러한 방식은 url 이라는 공간에 담겨가기 때문에 전송할 수 있는 데이터의 크기가 제한적이다.
 이에 더해 보안이 필요한 데이터에 대해서도 데이터가 그대로 url 에 노출되므로 적절하지 않을 수 있다.
 
 ### POST
