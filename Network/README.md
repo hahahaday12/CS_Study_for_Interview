@@ -24,7 +24,7 @@ GET 방식은 요청하는 데이터가 [HTTP Request Message](https://developer
 --
 
 
-## 웹 통신의 큰 흐름
+## 웹 통신의 큰 흐름
 
 ### 브라우저
 
