@@ -1,0 +1,6 @@
+# Network
+
+## DNS (Domain Name System)
+
+DNS란 'Domain Name System'의 약자로 'Domain Name Server' 혹은 'Domain Name Service'라고 칭하기도 합니다.
+DNS는 호스트의 도메인 이름을 호스트의 네트워크 주소(IP)로 바꾸거나 그 반대로 네트워크 주소를 도메인 이름으로 변환시키는 작업을 의미합니다.
