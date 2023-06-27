@@ -1,0 +1,20 @@
+## HTTP의 GET과 POST 비교
+
+### GET
+<img width="796" alt="image" src="https://github.com/1017yu/Todo-doTalk/assets/83483378/8eba0096-fd2e-4fe3-92d4-6cbe07481bc8">
+
+GET 방식은 요청하는 데이터가 [HTTP Request Message](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages)의 Header 부분에 url 이 담겨서 전송된다. 
+때문에 url 상에 ?(쿼리 문자열이 붙는 절대 경로) 뒤에 데이터가 붙어 request 를 보내게 되는 것이다. 이러한 방식은 url 이라는 공간에 담겨가기 때문에 전송할 수 있는 데이터의 크기가 제한적이다.
+이에 더해 보안이 필요한 데이터에 대해서도 데이터가 그대로 url 에 노출되므로 적절하지 않을 수 있다.
+
+### POST
+
+<img width="796" alt="image" src="https://github.com/1017yu/Todo-doTalk/assets/83483378/f3a90a80-1207-4e87-9dd5-9bbc0e29df3b">
+
+ POST 방식은 [HTTP Request Message](https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages)의 Body 부분에 데이터가 담겨서 전송된다. POST 방식은 GET 방식과 다르게 데이터들이 URL에 표시되지 않고 HTTP 패킷 Body에 담겨 서버로 데이터가 전송된다. 따라서 보내는 데이터의 양에 제한이 없어 대용량 데이터를 전송할 때는 POST 방식이 적합하다. 그리고 URL에 데이터가 표시가 되지 않기 때문에 GET 방식보다는 상대적으로 보안적이지만, body의 데이터도 결국엔 크롬 개발자 도구, Fiddler와 같은 툴로 요청 내용을 확인할 수 있기 때문에 꼭 암호화를 해주어야 한다.
+
+부수적인 차이점을 좀 더 살펴보자면 GET 방식의 요청은 브라우저에서 Caching 할 수 있다. 때문에 POST 방식으로 요청해야 할 것을 보내는 데이터의 크기가 작고 보안적인 문제가 없다는 이유로 GET 방식으로 요청한다면 기존에 caching 되었던 데이터가 응답될 가능성이 존재한다. 때문에 목적에 맞는 기술을 사용해야 하는 것이다.
+
+브라우저의 캐싱은 웹 페이지를 방문할 때, 웹 서버에서 웹 페이지의 HTML 코드와 이미지 파일 등을 저장하는 것을 일컫는다. 사용자는 웹 페이지를 방문하면, 브라우저는 캐싱된 데이터를 반환하는데,
+캐싱된 데이터가 존재하지 않는 경우, 브라우저는 웹 서버에서 데이터를 가져와서 웹 페이지를 생성하는 것이다. 생성된 웹 페이지는 캐싱되고, 사용자의 다음 요청에 사용된다.
+이 과정에서 보안 요구가 뛰어난 정보를 포함하여 GET 방식을 요청하면, 의도하지 않게 다른 GET 요청에서 노출이 될 수 있다.
