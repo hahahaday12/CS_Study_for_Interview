@@ -1,0 +1,87 @@
+# CPU Scheduling
+
+## CPU 스케쥴링이란?
+
+- 메모리에 있는 프로세스들 중 어떤 프로세스를 실행할지 선택하고 CPU를 할당해주는 OS단의 작업
+- 한정된 CPU 자원을 효율적으로 사용하기 위한 작업
+<br>
+
+## 선점형(preemptive) vs 비선점형(non preemptive)
+
+- 선점형 : 한번 실행된 프로세스를 중단시킬 수 있다.
+- 비선점형: 프로세스가 실행되면 끝날때까지 CPU를 점유함
+<br>
+
+## 다중프로그래밍에서의 시간개념
+
+![image-11](https://github.com/howooking/KDT5-M5/assets/87072568/9d48ca00-fec8-4bd2-aab1-57c5dbfc3a3e)
+
+- OS에서 소프트웨어적으로 CPU가 놀지 않는 것이 스케줄링의 목표라고 할 수 있다.
+- 실행시간(running time) === burst time === execution time인거 같음(확실치 않음)
+- - arrival time : 프로세스가 처음 대기열에 들어오는 시점
+- 실행시간(running time)은 CPU성능과 직결되므로 오버클럭을 하지 않는 이상 줄일 수 없다.
+- A가 모두 실행이 되고 B가 실행이 된다라고 가정을 하면
+  - A 입장에서 응답시간과 실행시간은 동일하며, 대기시간은 줄어든다.
+  - 그러나 B입장에서는 응답시간은 늘어나고 대기시간도 늘어난다.
+
+<br>
+
+## FCFS (First Come First Served) 스케줄링
+
+![image-11](https://github.com/howooking/KDT5-M5/assets/87072568/7e15a06d-5c74-4e43-b0ef-051cb012cb31)
+
+- 가장 먼저 들어온 프로세스를 CPU에 할당하는 방식
+- 해당 프로세스가 끝날 때까지 다른 프로세스들은 대기를 해야한다.
+- 비선점형 스케줄링
+- 문제점
+  - 실행시간이 긴 프로세스가 먼저 실행이 될 경우 평균 대기시간이 늘어난다.
+<br>
+
+## SJF (Shortest Job First) 스케줄링
+
+<img width="528" alt="image-15" src="https://github.com/howooking/KDT5-M5/assets/87072568/f34a9703-5d8f-4ff4-96f1-93c0bbe37f7a">
+
+- 비선점형
+- 문제점
+  - starvation: 사용 시간이 긴 프로세스는 거의 영원히 CPU 를 할당받을 수 없다.
+<br>
+## SRTF (Shortest Remaining Time First)
+
+<img width="610" alt="image-16" src="https://github.com/howooking/KDT5-M5/assets/87072568/f4aebeed-0c5f-4133-af5d-6991706c83ae">
+
+- 선점형 SJF === Shortest Remaining Time First
+- 새로운 프로세스가 도착할 때마다 새로운 스케줄링이 이루어진다.
+- 현재 수행중인 프로세스의 남은 burst time 보다 더 짧은 CPU burst time 을 가지는 새로운 프로세스가 도착하면 CPU 를 뺏긴다.
+- 문제점
+
+  - starvation: 사용 시간이 긴 프로세스는 거의 영원히 CPU 를 할당받을 수 없다.
+  - CPU burst time은 일반적으로 이전 실행 기록이나 프로파일링 기술을 사용하여 추정하거나 측정할 수 있다. 그러나 SRTF에서는 동적인 스케줄링이 일어나기 때문에, 정확한 burst time을 측정하기 어렵다.<br>
+<br>
+
+## Priority 스케줄링
+
+<img width="589" alt="image-17" src="https://github.com/howooking/KDT5-M5/assets/87072568/d87472d8-df7b-436f-9b5f-7cd33f702600">
+
+(모두 같은 시간에 도착했다 가정)
+
+- 각각의 프로세스에 우선순위 넘버가 있다.
+- 가장 높은 우선순위의 프로세스에 CPU를 할당한다.
+- 선점형과 비선점형이 나뉜다.
+- SJF도 Priority 스케줄링이라고 할 수 있다. ( 다음 CPU burst time이 우선순위인 것처럼 작동하므로)
+- 문제점
+  - starvation 낮은 우선순위의 프로세스가 거의 영원히 CPU를 할당받을 수 없다.
+    - starvation을 해결하기 위해서 노화(aging)를 사용할 수 있다. 시간이 지날수록 프로세스의 우선순위를 높여주는 식.
+<br>
+
+## Round Robin(RR) 스케줄링
+
+<img width="623" alt="image-18" src="https://github.com/howooking/KDT5-M5/assets/87072568/c0b64744-8d41-4d29-a1f9-ee5194c6bcea">
+
+- 현대적인 CPU 스케줄링
+- 각각의 프로세스에 동일한 CPU 할당 시간을 부여해서 해당 시간 동안만 CPU를 이용하게 한다.
+- 할당 시간 내에 처리를 완료하지 못하면 해당 프로세스는 줄 맨뒤로 가고 다음 프로세스로 넘어가므로 선점형 방식이다.
+- n개의 프로세스가 있을 때 할당 시간을 q로 설정하면, 어떤 프로세스도 (n-1)q 시간 이상을 기다리지 않아도 된다.
+- 평균 응답 시간을 빠르게 할 수 있다는 장점이 있다.
+- q가 커진다면 FCFS처럼 작동한다.
+- q가 너무 작아지면 과도한 context switching이 발생한다.
+  - 프로세스가 CPU를 사용한 후에도 아직 작업을 완료하지 못한 상태에서 다음 프로세스로 전환되면 이에 따른 context가 바뀌어야한다(참조하는 메모리 값, 레지스터 값 등...) 이 작업은 매우 빠르기는 하나 이역시 시간과 자원을 필요로 하는 작업이기 때문에 오버헤드(어떤 작업을 수행하기 위해 소요되는 추가적인 비용이나 부담)가 발생. 이는 시스템 성능을 저하시키고, CPU의 이용률을 낮출 수 있습니다.
