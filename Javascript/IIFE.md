@@ -100,10 +100,12 @@ const convenience = function() {
 
 
 ```
+
 !function() {
     const siwoo = 'GS25';
     alert(siwoo);
 }();
+
 ```
 
 <img width="679" alt="image" src="https://github.com/FC-MINI-4/attendance-front/assets/83483378/1f70e21d-1659-4fb5-8ff1-afbc4cd240fc">
