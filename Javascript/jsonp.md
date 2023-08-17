@@ -60,8 +60,11 @@
 
 ```
 - api endpoint를 브라우저에 입력해보면 다음과 같이 나온다.
+
 ![](https://velog.velcdn.com/images/junsgk/post/26eac436-39ce-40ce-9106-b39cfe4c1d39/image.png)
+
 - 지정한 `handleWeatherData` 함수 안에 json 값이 담겨져있다. 이 함수 실행문이 통째로 클라이언트에게 전달이 되고 클라이언트에서 선언한 `handleWeatherData` 함수가 실행된다.
+
 ![](https://velog.velcdn.com/images/junsgk/post/69159ed4-b185-4496-99b8-ae1725a51882/image.png)
 
 
