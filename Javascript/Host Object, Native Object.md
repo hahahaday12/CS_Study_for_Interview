@@ -1,8 +1,9 @@
 # Javascript
 
-![자바스크립트 객체의 3가지 분류](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a6993a74-299f-4c70-836e-490dfb65e3eb/Untitled.png)
-
+![자바스크립트 객체의 3가지 분류](https://github.com/CS-TeamStudy/CS_Study_for_Interview/assets/116873887/f4d79d82-b934-46a9-96cd-392222e8ab68)
 자바스크립트 객체의 3가지 분류
+
+<br />
 
 ## 네이티브 객체 (Native Objects)
 
@@ -50,11 +51,9 @@
 
 ### 원시 타입과 Wrapper Object
 
-<aside>
-📌 **원시타입 (Primitive Type)**
+📌 **원시타입 (Primitive Type)** : 
 String, Number, BigInt, Boolean, Undefined, Symbol, Null
 
-</aside>
 
 네이티브 객체는 각자의 프로퍼티와 메소드를 가진다. 정적(static) 프로퍼티와 메소드는 인스턴스를 생성하지 않아도 사용할 수 있고 prototype에 속해있는 메소드는 해당 prototype을 상속받은 인스턴스가 있어야지만 사용할 수 있다.
 
@@ -131,7 +130,7 @@ console.log(typeof num);  // object
 - 최상위 객체의 자식 객체들은 브라우저의 다른 기능을 표현
 - 자식 객체들은 Standard Built-in Objects가 구성된 후에 구성된다.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/dc3dc7ff-a953-4d4c-aa72-625fe4b4c8ab/Untitled.png)
+![BOM](https://github.com/CS-TeamStudy/CS_Study_for_Interview/assets/116873887/c587689c-5bb8-44d8-b75f-ac6002398c73)
 
 <br />
 
@@ -143,7 +142,7 @@ console.log(typeof num);  // object
 - 최상위 객체의 자식 객체들은 문서의 다른 요소들을 표현
 - BOM과 마찬가지로 Standard Built-in Objects가 구성된 후에 구성된다.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/05f284c7-4cdc-4105-bffa-648de9db86c5/Untitled.png)
+![DOM](https://github.com/CS-TeamStudy/CS_Study_for_Interview/assets/116873887/febd409c-7df3-4e4a-970f-d489505aa93f)
 
 <br />
 
