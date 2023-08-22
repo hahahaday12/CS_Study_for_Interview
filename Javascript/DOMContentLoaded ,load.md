@@ -22,7 +22,7 @@
 
   <img id="img" src="https://en.js.cx/clipart/train.gif?speed=1&cache=0">
   ```
-
+  
 ### DOMContentLoaded event의 특이사항
 
 - DOMContentLoaded와 scripts
