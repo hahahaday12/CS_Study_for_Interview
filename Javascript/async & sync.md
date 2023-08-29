@@ -2,7 +2,9 @@
 ![](https://velog.velcdn.com/images/junsgk/post/fb571246-f623-4b8e-951d-f96cb79b5b0d/image.png)
 
 동기와 비동기의 사전적 의미는 다음과 같다
+
 `동기` 동시에 일어나는 
+
 `비동기` 동시에 일어나지 않는
 
 그러나 위 사진을 보면 특정 시점에서 동시에 여러작업이 일어나고 있는 것은 오른쪽에 있는 `Asynchronous`, `비동기`이다.
