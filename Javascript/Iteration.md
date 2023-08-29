@@ -278,3 +278,4 @@ arr.reduce(callback[, initialValue])
 // Expected output:
 // 10 (10 + 1 + 2 + 3 + 4)
 ```
+
