@@ -23,7 +23,7 @@ Memory Heap, Call Stack, Web APIs, Task Queue(Cb Queue), Event Loop
 
 콜 스택은 함수의 호출을 저장하는 자료구조입니다. 어떠한 함수를 호출했을 경우 스택에 쌓이고, 또 다른 함수를 호출하면 그 다음 스택에 쌓이면서 가장 위에 쌓인 함수를 가장 먼저 처리합니다. (Last In First Out, LIFO)
 
-<br /><br />
+<br />
 
 <img width="" src="https://github.com/CS-TeamStudy/CS_Study_for_Interview/assets/116873887/842b7de1-643c-4ce9-afa6-7b0592a3b34c" />
 
@@ -64,7 +64,6 @@ Memory Heap, Call Stack, Web APIs, Task Queue(Cb Queue), Event Loop
 
 <img width="" src="https://github.com/CS-TeamStudy/CS_Study_for_Interview/assets/116873887/93e3e0a2-b678-4915-919e-1fd46ae64e11" />
 
-
 - `예제코드`
     
     ```jsx
@@ -78,6 +77,10 @@ Memory Heap, Call Stack, Web APIs, Task Queue(Cb Queue), Event Loop
     
     main();
     ```
+
+<img width="" src="https://github.com/CS-TeamStudy/CS_Study_for_Interview/assets/116873887/1238bf73-9d0c-4db8-aab2-b578649de8da" />
+
+<br />
 
 1. `main` 함수에 대한 호출이 먼저 call stack 에 추가(push)됩니다. 그런 다음 브라우저는 `main` 함수의 첫 번째 명령문인 `console.log('First')` 를 call stack에 추가합니다. call stack은 LIFO 형태로 이루어지기 때문에 나중에 들어온 `console.log('First')`가 먼저 실행되어 브라우저 콘솔에 출력된 뒤, `call stack`에서 제거(pop)됩니다.
 2. 다음 명령문인 `setTimeout` 이 call stack에 추가 및 실행 되면서 브라우저가 제공하는 `timer Web API`를 호출한 후에 call stack 에서 제거됩니다.
