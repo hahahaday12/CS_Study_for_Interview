@@ -153,7 +153,7 @@ sse.onmessage = console.log
 (index.js)
 const express = require('express');
 const app = express();
-const httpServer = require('http').createServer(app);
+const httpServer = require('http').createServer(app); 
 
 const io = require('socket.io')(httpServer, {
   cors: { origin: '*' },
